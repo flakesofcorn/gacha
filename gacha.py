@@ -323,7 +323,7 @@ def automate_process():
     else: 
         exit()
     while True:
-        # trough()
+        trough()
         for i in range(1, 31):
             string_variable = f"{i:02}"  # Format the number with leading zeros
             feed(string_variable)
