@@ -329,7 +329,7 @@ def automate_process():
         exit()
     while True:
         trough()
-        for i in range(1, 2):
+        for i in range(1, 31):
             string_variable = f"{i:02}"  # Format the number with leading zeros
             feed_thread = threading.Thread(target=feed, args=(string_variable,))
             feed_thread.start()
@@ -337,7 +337,7 @@ def automate_process():
             if i % 5 == 0:
                 time.sleep(10)
                 
-        time.sleep(100)
+        time.sleep(200)
 
  
 
