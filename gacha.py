@@ -2,7 +2,7 @@ import ctypes
 import time
 import keyboard
 import pyautogui
-
+import threading
 screen_width, screen_height = pyautogui.size()
 
 def is_within_main_screen(x, y):
@@ -178,11 +178,11 @@ def chair2():
     keyboard.press_and_release('e')
     
 def chair_after_pod():
-    time.sleep(0.5)
+    time.sleep(1)
     keyboard.press_and_release('e')
-    time.sleep(0.5)
+    time.sleep(1)
     keyboard.press_and_release('e')
-    time.sleep(0.5)
+    time.sleep(1)
       
 def pod():
     time.sleep(0.5)
@@ -326,7 +326,9 @@ def automate_process():
         trough()
         for i in range(1, 31):
             string_variable = f"{i:02}"  # Format the number with leading zeros
-            feed(string_variable)
+            feed_thread = threading.Thread(target=feed, args=(string_variable,))
+            feed_thread.start()
+            feed_thread.join()
             if i % 5 == 0:
                 time.sleep(10)
                 

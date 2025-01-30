@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import Qt, QTimer
 import sys
 from gacha import automate_process
+import threading
 
 class BlueBlackUI(QWidget):
     def __init__(self):
@@ -76,7 +77,7 @@ class BlueBlackUI(QWidget):
         self.ok = True
         self.start_button.setDisabled(True)
         self.stop_button.setDisabled(False)
-        automate_process()
+        threading.Thread(target=automate_process).start()
 
     def stop_clicked(self):
         self.start_button.setDisabled(False)
