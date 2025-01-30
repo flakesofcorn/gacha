@@ -12,7 +12,7 @@ class BlueBlackUI(QWidget):
         self.init_ui()
 
     def init_ui(self):
-        self.ok = True
+        self.stop_event = threading.Event()
         self.setWindowTitle("Best Gacha Bot")
         self.resize(300, 200)
 
@@ -84,6 +84,7 @@ class BlueBlackUI(QWidget):
         self.stop_button.setDisabled(True)
         print("Stopped")
         threading.Thread(target=automate_process).stop()
+        print("Main program exiting.")
 
 
 if __name__ == "__main__":

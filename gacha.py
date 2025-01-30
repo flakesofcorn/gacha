@@ -178,7 +178,7 @@ def chair2():
     keyboard.press_and_release('e')
     
 def chair_after_pod():
-    time.sleep(1)
+    time.sleep(3)
     keyboard.press_and_release('e')
     time.sleep(1)
     keyboard.press_and_release('e')
@@ -294,7 +294,6 @@ def start():
 
 
 def feed(i):
-    chair_after_pod()
     start()
     berry_station()
     TP(i)
@@ -319,12 +318,18 @@ def automate_process():
     if is_within_main_screen(10, 10):
         move_mouse(10, 10)
         pyautogui.click()
-        keyboard.press_and_release('E')
+        time.sleep(1)
+        keyboard.press_and_release('e')
+        time.sleep(2)
+        keyboard.press_and_release('e')
+        time.sleep(2)
+        keyboard.press_and_release('e')
+        
     else: 
         exit()
     while True:
         trough()
-        for i in range(1, 31):
+        for i in range(1, 2):
             string_variable = f"{i:02}"  # Format the number with leading zeros
             feed_thread = threading.Thread(target=feed, args=(string_variable,))
             feed_thread.start()
