@@ -83,7 +83,7 @@ class BlueBlackUI(QWidget):
         self.start_button.setDisabled(False)
         self.stop_button.setDisabled(True)
         print("Stopped")
-        sys.exit(app.exec_())
+        threading.Thread(target=automate_process).stop()
 
 
 if __name__ == "__main__":

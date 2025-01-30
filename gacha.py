@@ -294,6 +294,7 @@ def start():
 
 
 def feed(i):
+    chair_after_pod()
     start()
     berry_station()
     TP(i)
@@ -312,7 +313,6 @@ def feed(i):
     TPH()
     pod()
     time.sleep(1)
-    chair_after_pod()
 
 def automate_process():
     
