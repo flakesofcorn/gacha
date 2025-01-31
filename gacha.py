@@ -151,7 +151,7 @@ def gacha_station1():
 def gacha_station2():
     time.sleep(1)
     keyboard.press('right')
-    time.sleep(3)
+    time.sleep(3.4)
     keyboard.release('right')
     time.sleep(0.5)
     keyboard.press_and_release('f')
@@ -163,7 +163,6 @@ def gacha_station2():
     pyautogui.click()
     time.sleep(0.5)
     keyboard.press('esc')
-    
 
 def chair2():
     time.sleep(1)
@@ -187,7 +186,7 @@ def chair_after_pod():
 def pod():
     time.sleep(0.5)
     keyboard.press('up')
-    time.sleep(4)
+    time.sleep(6)
     keyboard.release('up')
     time.sleep(0.5)
     
@@ -264,7 +263,7 @@ def TP(i):
     pyautogui.click()
     time.sleep(0.3)
     pyautogui.click()
-    time.sleep(1.5)
+    time.sleep(3)
  
 
 def level_cam():
@@ -311,8 +310,12 @@ def feed(i):
     gacha_station2()
     TPH()
     pod()
+    chair_after_pod()
     time.sleep(1)
-
+# def crysyal(i):
+#     keyboard.press_and_release('e')
+#     time.sleep(2)
+    
 def automate_process():
     
     if is_within_main_screen(10, 10):
@@ -334,10 +337,8 @@ def automate_process():
             feed_thread = threading.Thread(target=feed, args=(string_variable,))
             feed_thread.start()
             feed_thread.join()
-            if i % 5 == 0:
-                time.sleep(10)
                 
-        time.sleep(200)
+        time.sleep(3600)
 
  
 
